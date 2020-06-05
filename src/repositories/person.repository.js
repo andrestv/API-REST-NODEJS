@@ -15,6 +15,14 @@ module.exports = class PersonRepository {
   async findAll(filter) {
     return await PersonModel.find(filter)
   }
+  /**
+   *
+   * @param {object} filter: puede contener una o mas propiedades del documento en MongoDB por el cual se desea buscar
+   */
+
+  async paginate(filter) {
+    return await PersonModel.paginate(filter)
+  }
 
   /**
    *

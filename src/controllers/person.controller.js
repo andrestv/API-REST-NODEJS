@@ -32,7 +32,7 @@ module.exports = class PersonController {
     const country = ctx.params.country
     if (gender != null) {
       const filter = { gender: gender, age: age, country: country }
-      const data = await repository.findAll(filter)
+      const data = await repository.paginate(filter)
       if (data) {
         ctx.body = data
       } else {
